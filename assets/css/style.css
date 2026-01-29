@@ -1,0 +1,1024 @@
+/* ================= RESET ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* ================= BODY ================= */
+body {
+    background: #0b1320;
+    color: #c7d5e0;
+    padding: 20px;
+}
+
+/* ================= LINKS ================= */
+a {
+    color: #66c0f4;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ffffff;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+    background: #171a21;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.navbar h1 {
+    color: #66c0f4;
+    font-size: 22px;
+}
+
+.navbar a {
+    margin-left: 15px;
+}
+
+/* ===== NAV RIGHT ===== */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Username */
+.nav-user {
+    color: #c7d5e0;
+    font-size: 14px;
+}
+
+/* ===== LOGIN BUTTON ===== */
+.btn-login {
+    padding: 8px 14px;
+    background: #1f80ff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.btn-login:hover {
+    background: #1a6fe0;
+}
+
+/* ===== LOGOUT BUTTON ===== */
+.btn-logout {
+    padding: 8px 14px;
+    background: #e11d48;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.btn-logout:hover {
+    background: #be123c;
+}
+
+/* ================= CONTAINER ================= */
+.container {
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* ================= GAME GRID ================= */
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.game-card {
+    background: #171a21;
+    border-radius: 8px;
+    padding: 15px;
+    transition: 0.2s ease;
+}
+
+.game-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(102, 192, 244, 0.3);
+}
+
+.game-card h3 {
+    color: #ffffff;
+    margin-bottom: 6px;
+}
+
+.game-card p {
+    font-size: 14px;
+    color: #8f98a0;
+}
+
+.price {
+    margin-top: 8px;
+    color: #66c0f4;
+    font-weight: bold;
+}
+
+/* ================= BUTTON ================= */
+.btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 16px;
+    background: linear-gradient(90deg, #06bfff, #2d73ff);
+    color: #fff;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+.btn-danger {
+    background: #b91c1c;
+}
+
+.btn-secondary {
+    background: #374151;
+}
+
+/* ================= OWNED ================= */
+.owned {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 4px 8px;
+    background: #16a34a;
+    font-size: 12px;
+    border-radius: 4px;
+    color: #fff;
+}
+
+/* ================= TABLE ================= */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #171a21;
+    margin-top: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th,
+td {
+    padding: 12px;
+    border-bottom: 1px solid #2a2f3a;
+    text-align: left;
+}
+
+th {
+    background: #1b2838;
+    color: #66c0f4;
+}
+
+/* ================= FORM ================= */
+form {
+    background: #171a21;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 500px;
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background: #0b1320;
+    border: 1px solid #2a2f3a;
+    border-radius: 4px;
+    color: #fff;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: #66c0f4;
+}
+
+/* ================= AUTH (LOGIN / REGISTER) ================= */
+.auth-wrapper {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #0b1320;
+}
+
+.auth-box {
+    width: 100%;
+    max-width: 420px;
+    background: #171a21;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 25px rgba(102, 192, 244, 0.25);
+}
+
+.auth-box h2 {
+    margin-bottom: 20px;
+    color: #66c0f4;
+    font-size: 22px;
+}
+
+/* Input */
+.auth-box input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 12px;
+    background: #0b1320;
+    border: 1px solid #2a2f3a;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 14px;
+}
+
+.auth-box input:focus {
+    outline: none;
+    border-color: #66c0f4;
+}
+
+/* Button */
+.auth-box .btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+/* Text bawah */
+.auth-box p {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #8f98a0;
+}
+
+.auth-box a {
+    color: #66c0f4;
+}
+
+.auth-box a:hover {
+    text-decoration: underline;
+}
+
+/* ================= INVOICE ================= */
+.invoice-box {
+    background: #171a21;
+    padding: 25px;
+    border-radius: 8px;
+    max-width: 700px;
+    margin: auto;
+}
+
+/* ================= ALERT ================= */
+.alert {
+    background: #1b2838;
+    padding: 10px;
+    border-left: 4px solid #66c0f4;
+    margin-bottom: 15px;
+}
+
+/* ================= FOOTER ================= */
+.footer {
+    margin-top: 40px;
+    text-align: center;
+    color: #8f98a0;
+    font-size: 13px;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .game-grid {
+        grid-template-columns: 1fr;
+    }
+
+    form {
+        width: 100%;
+    }
+}
+
+/* ===== EPIC LAYOUT ===== */
+.epic-layout {
+    display: flex;
+    margin-top: 20px;
+}
+
+/* ===== EPIC SIDEBAR ===== */
+.epic-sidebar {
+    width: 230px;
+    background: #121212;
+    padding: 20px 15px;
+    border-radius: 10px;
+}
+
+.sidebar-section {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.sidebar-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 14px 16px;
+    font-size: 16px;
+    /* FONT DIBESARKAN */
+    font-weight: 500;
+
+    color: #e5e5e5;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background 0.2s ease;
+}
+
+.sidebar-item i {
+    font-size: 18px;
+    /* ICON LEBIH BESAR */
+    width: 22px;
+    text-align: center;
+}
+
+.sidebar-item:hover {
+    background: #2a2a2a;
+}
+
+.sidebar-item.active {
+    background: #1f80ff;
+    color: #ffffff;
+}
+
+/* ================= DASHBOARD CARDS ================= */
+.dashboard-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #1b2838, #171a21);
+    border-radius: 12px;
+    padding: 25px;
+    color: #fff;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(102, 192, 244, 0.4);
+}
+
+.card-icon i {
+    font-size: 40px;
+    margin-bottom: 12px;
+}
+
+/* Warna berbeda untuk setiap card */
+.users-card {
+    background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+}
+
+.games-card {
+    background: linear-gradient(135deg, #065f46, #10b981);
+}
+
+.trx-card {
+    background: linear-gradient(135deg, #b91c1c, #ef4444);
+}
+
+/* Text Styling */
+.dashboard-card h3 {
+    font-size: 18px;
+    margin-bottom: 6px;
+    color: #fff;
+}
+
+.dashboard-card p {
+    font-size: 16px;
+    color: #d1d5db;
+}
+
+/* ================= GAME MANAGEMENT ================= */
+h2 {
+    color: #66c0f4;
+    margin-bottom: 20px;
+}
+
+a.button {
+    display: inline-block;
+    background: #1f80ff;
+    color: #fff;
+    padding: 10px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    margin-bottom: 20px;
+    transition: 0.2s;
+}
+
+a.button:hover {
+    background: #1a6fe0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #171a21;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+th,
+td {
+    padding: 12px 15px;
+    text-align: left;
+}
+
+th {
+    background: #1b2838;
+    color: #66c0f4;
+    font-weight: 600;
+}
+
+tr {
+    border-bottom: 1px solid #2a2f3a;
+}
+
+tr:last-child {
+    border-bottom: none;
+}
+
+td {
+    color: #d1d5db;
+}
+
+td .btn-edit,
+td .btn-delete {
+    padding: 6px 12px;
+    border-radius: 5px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    margin-right: 5px;
+    transition: 0.2s;
+}
+
+td .btn-edit {
+    background: #10b981;
+}
+
+td .btn-edit:hover {
+    background: #0f766e;
+}
+
+td .btn-delete {
+    background: #ef4444;
+}
+
+td .btn-delete:hover {
+    background: #b91c1c;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 20px;
+    color: #66c0f4;
+    text-decoration: none;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+/* ================= RESPONSIVE TABLE ================= */
+@media (max-width: 768px) {
+
+    table,
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
+        display: block;
+    }
+
+    th {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    tr {
+        margin-bottom: 15px;
+    }
+
+    td {
+        padding-left: 50%;
+        position: relative;
+    }
+
+    td:before {
+        content: attr(data-label);
+        position: absolute;
+        left: 15px;
+        font-weight: bold;
+        color: #66c0f4;
+    }
+}
+
+/* ================= BUTTON LAYOUT ================= */
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    /* tombol kiri dan kanan berjauhan */
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.button-container .button {
+    background: #1f80ff;
+    color: #fff;
+    padding: 10px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.button-container .button:hover {
+    background: #1a6fe0;
+}
+
+.back-link {
+    background: #374151;
+    /* warna gelap */
+    color: #fff;
+    padding: 10px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.back-link:hover {
+    background: #1f2937;
+}
+
+/* ================= GAME FORM CENTERED ================= */
+.game-form-wrapper {
+    min-height: 100vh;
+    /* full screen */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #0b1320;
+}
+
+.game-form-box {
+    background: #171a21;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 25px rgba(102, 192, 244, 0.25);
+    width: 100%;
+    max-width: 450px;
+    color: #fff;
+}
+
+.game-form-box h2 {
+    text-align: center;
+    color: #66c0f4;
+    margin-bottom: 20px;
+}
+
+/* Form Input */
+.game-form-box input,
+.game-form-box textarea {
+    width: 100%;
+    padding: 12px 40px 12px 12px;
+    /* space untuk icon */
+    margin-bottom: 15px;
+    border: 1px solid #2a2f3a;
+    border-radius: 6px;
+    background: #0b1320;
+    color: #fff;
+    font-size: 14px;
+    position: relative;
+}
+
+/* Icon di dalam input */
+.input-icon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #66c0f4;
+}
+
+/* Submit Button */
+.game-form-box button {
+    width: 100%;
+    padding: 12px;
+    background: #1f80ff;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.game-form-box button:hover {
+    background: #1a6fe0;
+}
+
+/* Back link */
+.game-form-box .back-link {
+    display: inline-block;
+    margin-top: 15px;
+    color: #66c0f4;
+    text-decoration: none;
+}
+
+.game-form-box .back-link:hover {
+    text-decoration: underline;
+}
+
+/* Input wrapper untuk icon */
+.input-wrapper {
+    position: relative;
+}
+
+/* ================= GAME FORM (Admin) ================= */
+.game-form-wrapper {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #0b1320 0%, #1b2838 100%);
+    padding: 20px;
+}
+
+.game-form-box {
+    background: rgba(23, 26, 33, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(102, 192, 244, 0.2);
+    width: 100%;
+    max-width: 600px;
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.game-form-box h2 {
+    text-align: center;
+    color: #66c0f4;
+    margin-bottom: 30px;
+    font-size: 28px;
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.game-form-box h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #66c0f4, #2d73ff);
+    border-radius: 2px;
+}
+
+/* Form Elements */
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-label {
+    display: block;
+    color: #c7d5e0;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.input-wrapper {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-wrapper i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #66c0f4;
+    font-size: 16px;
+    z-index: 1;
+}
+
+.input-wrapper input,
+.input-wrapper textarea,
+.input-wrapper select {
+    width: 100%;
+    padding: 14px 20px 14px 45px;
+    background: rgba(11, 19, 32, 0.8);
+    border: 2px solid rgba(42, 47, 58, 0.8);
+    border-radius: 10px;
+    color: #c7d5e0;
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+
+.input-wrapper input:focus,
+.input-wrapper textarea:focus,
+.input-wrapper select:focus {
+    outline: none;
+    border-color: #66c0f4;
+    box-shadow: 0 0 0 3px rgba(102, 192, 244, 0.2);
+    background: rgba(11, 19, 32, 0.9);
+}
+
+.input-wrapper textarea {
+    min-height: 120px;
+    resize: vertical;
+    line-height: 1.5;
+}
+
+.input-wrapper select {
+    appearance: none;
+    cursor: pointer;
+    padding-right: 45px;
+}
+
+.input-wrapper select+i {
+    left: auto;
+    right: 15px;
+    pointer-events: none;
+}
+
+.price-wrapper {
+    position: relative;
+}
+
+.price-wrapper::before {
+    content: 'Rp';
+    position: absolute;
+    left: 45px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #66c0f4;
+    font-weight: 600;
+    z-index: 1;
+}
+
+.price-wrapper input {
+    padding-left: 70px !important;
+}
+
+/* Status Radio Buttons */
+.status-badges {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.status-badge {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid rgba(42, 47, 58, 0.8);
+    border-radius: 8px;
+    background: rgba(11, 19, 32, 0.6);
+    color: #8f98a0;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.status-badge:hover {
+    border-color: rgba(102, 192, 244, 0.5);
+    background: rgba(102, 192, 244, 0.1);
+}
+
+.status-badge.active {
+    border-color: #66c0f4;
+    background: rgba(102, 192, 244, 0.15);
+    color: #66c0f4;
+}
+
+.status-badge input[type="radio"] {
+    display: none;
+}
+
+.status-badge i {
+    display: block;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+/* Form Actions */
+.form-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.btn-submit {
+    flex: 2;
+    padding: 16px;
+    background: linear-gradient(135deg, #1f80ff, #2d73ff);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(31, 128, 255, 0.4);
+    background: linear-gradient(135deg, #2d73ff, #1f80ff);
+}
+
+.btn-cancel {
+    flex: 1;
+    padding: 16px;
+    background: rgba(42, 47, 58, 0.8);
+    color: #c7d5e0;
+    border: 1px solid rgba(102, 192, 244, 0.2);
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn-cancel:hover {
+    background: rgba(102, 192, 244, 0.1);
+    border-color: #66c0f4;
+    color: #66c0f4;
+}
+
+/* Image Preview */
+.image-preview {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.image-preview img {
+    max-width: 200px;
+    max-height: 150px;
+    border-radius: 8px;
+    border: 2px solid rgba(102, 192, 244, 0.3);
+    padding: 5px;
+    background: rgba(11, 19, 32, 0.8);
+}
+
+.no-image {
+    width: 200px;
+    height: 150px;
+    background: rgba(11, 19, 32, 0.8);
+    border: 2px dashed rgba(102, 192, 244, 0.3);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #8f98a0;
+    margin: 0 auto;
+}
+
+.no-image i {
+    font-size: 40px;
+}
+
+/* Validation Styles */
+.input-wrapper.error input,
+.input-wrapper.error textarea,
+.input-wrapper.error select {
+    border-color: #ef4444;
+}
+
+.error-message {
+    color: #ef4444;
+    font-size: 13px;
+    margin-top: 5px;
+    display: none;
+}
+
+.input-wrapper.error .error-message {
+    display: block;
+}
+
+/* Notifications */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(23, 26, 33, 0.95);
+    color: white;
+    padding: 15px 20px;
+    border-radius: 8px;
+    border-left: 4px solid #66c0f4;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 1000;
+    animation: slideIn 0.3s ease-out;
+}
+
+.notification-error {
+    background: rgba(239, 68, 68, 0.9);
+    border-left-color: #ef4444;
+}
+
+.notification-success {
+    background: rgba(16, 185, 129, 0.9);
+    border-left-color: #10b981;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .game-form-box {
+        padding: 30px 20px;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .status-badges {
+        flex-direction: column;
+    }
+
+    .game-form-box h2 {
+        font-size: 24px;
+    }
+}
