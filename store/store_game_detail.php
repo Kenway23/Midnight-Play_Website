@@ -7,7 +7,7 @@ function redirect_login()
 {
     $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https://' : 'http://';
     $host = $_SERVER['HTTP_HOST'];
-    $path = '/midnightplay_web/auth/auth_login.php';
+    $path = '/auth/auth_login.php';
 
     // Tambahkan return_url jika ada
     $return_url = urlencode($_SERVER['REQUEST_URI']);
