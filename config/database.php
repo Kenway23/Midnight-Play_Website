@@ -1,20 +1,13 @@
 <?php
-
 $host = getenv("MYSQLHOST");
 $port = getenv("MYSQLPORT");
-$dbname = getenv("MYSQLDATABASE");
-$username = getenv("MYSQLUSER");
-$password = getenv("MYSQLPASSWORD");
+$user = getenv("MYSQLUSER");
+$pass = getenv("MYSQLPASSWORD");
+$db = getenv("MYSQLDATABASE");
 
-try {
-    $dsn = "mysql:host=$host;port=$port;dbname=$dbname;charset=utf8mb4";
+$conn = mysqli_connect($host, $user, $pass, $db, $port);
 
-    $pdo = new PDO($dsn, $username, $password, [
-        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-        PDO::ATTR_TIMEOUT => 5
-    ]);
-} catch (PDOException $e) {
-    // JANGAN echo di production
-    error_log($e->getMessage());
-    exit;
+if (!$conn) {
+    die("Koneksi database gagal: " . mysqli_connect_error());
 }
+?>
