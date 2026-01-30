@@ -41,7 +41,7 @@ if (isset($_SESSION['login'])) {
 
     // Cek di library
     $check_library = mysqli_query($conn, "
-        SELECT * FROM library
+        SELECT * FROM 'library'
         WHERE id_user = '$user_id'
         AND id_game = '$id'
     ");
