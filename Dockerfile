@@ -1,16 +1,10 @@
-FROM php:8.2-apache
+FROM php:8.2-cli
 
-# Disable MPM lain, aktifkan prefork
-RUN a2dismod mpm_event mpm_worker \
-    && a2enmod mpm_prefork
-
-# Install ekstensi PHP MySQL
+# Install ekstensi database
 RUN docker-php-ext-install mysqli pdo pdo_mysql
 
-# Copy project ke Apache
-COPY . /var/www/html/
+WORKDIR /app
+COPY . .
 
-# Permission
-RUN chown -R www-data:www-data /var/www/html
-
-EXPOSE 80
+# Railway pakai PORT dari env
+CMD ["sh", "-c", "php -S 0.0.0.0:$PORT -t ."]
