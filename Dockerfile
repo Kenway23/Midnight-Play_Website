@@ -1,9 +1,13 @@
 FROM php:8.2-apache
 
-# Install MySQL extensions (INI YANG PENTING)
+# Disable MPM lain, aktifkan prefork
+RUN a2dismod mpm_event mpm_worker \
+    && a2enmod mpm_prefork
+
+# Install ekstensi PHP MySQL
 RUN docker-php-ext-install mysqli pdo pdo_mysql
 
-# Copy semua file project ke apache
+# Copy project ke Apache
 COPY . /var/www/html/
 
 # Permission
