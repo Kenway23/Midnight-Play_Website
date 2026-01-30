@@ -530,10 +530,10 @@ $items_count = mysqli_num_rows($details_result);
             <a href="generate_pdf_user.php?id=<?= $transaction_id; ?>" class="btn btn-secondary" target="_blank">
                 <i class="fas fa-file-pdf"></i> Export to PDF
             </a>
-            <a href="/midnightplay_web/library/library_user_games.php" class="btn btn-tertiary">
+            <a href="/library/library_user_games.php" class="btn btn-tertiary">
                 <i class="fas fa-gamepad"></i> Go to Library
             </a>
-            <a href="/midnightplay_web/index.php" class="btn btn-quaternary">
+            <a href="/index.php" class="btn btn-quaternary">
                 <i class="fas fa-store"></i> Back to Store
             </a>
         </div>

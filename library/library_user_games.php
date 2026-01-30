@@ -12,7 +12,7 @@ $id_user = $_SESSION['id_user'];
 // Query untuk mengambil game dari library user - DIUBAH disini
 $query = mysqli_query($conn, "
     SELECT g.*, l.purchased_at, l.id_library
-    FROM library l
+    FROM `library` l
     JOIN games g ON l.id_game = g.id_game
     WHERE l.id_user = $id_user
     ORDER BY l.purchased_at DESC
@@ -26,7 +26,7 @@ $stats_query = mysqli_query($conn, "
         COUNT(DISTINCT g.genre) as total_genres,
         SUM(g.price) as total_value,
         MIN(l.purchased_at) as first_added
-    FROM library l
+    FROM `library` l
     JOIN games g ON l.id_game = g.id_game
     WHERE l.id_user = $id_user
 ");
@@ -44,7 +44,7 @@ $sort_by = $_GET['sort'] ?? 'recent';
 // Modifikasi query jika ada filter - DIUBAH disini
 $filter_query = "
     SELECT g.*, l.purchased_at, l.id_library
-    FROM library l
+    FROM `library` l
     JOIN games g ON l.id_game = g.id_game
     WHERE l.id_user = $id_user
 ";

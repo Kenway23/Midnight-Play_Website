@@ -20,7 +20,7 @@ mysqli_stmt_close($stmt);
 // Hitung statistik user
 $stats_query = mysqli_query($conn, "
     SELECT 
-        (SELECT COUNT(*) FROM library WHERE id_user = $id_user) as total_games,
+        (SELECT COUNT(*) FROM `library` WHERE id_user = $id_user) as total_games,
         (SELECT COUNT(*) FROM transactions WHERE id_user = $id_user) as total_purchases,
         (SELECT SUM(total_price) FROM transactions WHERE id_user = $id_user) as total_spent
 ");
