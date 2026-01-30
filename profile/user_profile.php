@@ -3,7 +3,7 @@ session_start();
 include "../config/database.php";
 
 if (!isset($_SESSION['login'])) {
-    header("Location: /midnightplay_web/auth/auth_login.php");
+    header("Location: /auth/auth_login.php");
     exit();
 }
 
@@ -550,7 +550,7 @@ $total_spent_formatted = number_format($stats['total_spent'] ?? 0, 0, ',', '.');
                     <i class="fa-solid fa-right-from-bracket"></i> Logout
                 </a>
             <?php } else { ?>
-                <a href="/midnightplay_web/auth/auth_login.php" class="btn-login">
+                <a href="/auth/auth_login.php" class="btn-login">
                     <i class="fa-solid fa-right-to-bracket"></i> Login
                 </a>
             <?php } ?>
@@ -562,17 +562,17 @@ $total_spent_formatted = number_format($stats['total_spent'] ?? 0, 0, ',', '.');
         <!-- SIDEBAR -->
         <aside class="epic-sidebar">
             <div class="sidebar-section fade-in">
-                <a href="/midnightplay_web/index.php" class="sidebar-item">
+                <a href="/index.php" class="sidebar-item">
                     <i class="fa-solid fa-store"></i>
                     <span>Store</span>
                 </a>
 
-                <a href="/midnightplay_web/library/library_user_games.php" class="sidebar-item">
+                <a href="/library/library_user_games.php" class="sidebar-item">
                     <i class="fa-solid fa-gamepad"></i>
                     <span>Library</span>
                 </a>
 
-                <a href="/midnightplay_web/invoices/invoice_user_list.php" class="sidebar-item">
+                <a href="/invoices/invoice_user_list.php" class="sidebar-item">
                     <i class="fa-solid fa-receipt"></i>
                     <span>Purchases</span>
                 </a>
@@ -979,7 +979,7 @@ $total_spent_formatted = number_format($stats['total_spent'] ?? 0, 0, ',', '.');
                 <button class="btn-secondary" onclick="closeLogoutModal()">
                     <i class="fas fa-times"></i> Cancel
                 </button>
-                <a href="/midnightplay_web/auth/auth_logout.php" class="btn-primary">
+                <a href="/auth/auth_logout.php" class="btn-primary">
                     <i class="fas fa-sign-out-alt"></i> Yes, Logout
                 </a>
             </div>

@@ -4,7 +4,7 @@ require "../fpdf/fpdf.php";
 include "../config/database.php";
 
 if (!isset($_SESSION['login'])) {
-    header("Location: /midnightplay_web/auth/auth_login.php");
+    header("Location:/auth/auth_login.php");
     exit();
 }
 

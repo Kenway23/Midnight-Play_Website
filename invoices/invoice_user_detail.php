@@ -3,7 +3,7 @@ session_start();
 include "../config/database.php";
 
 if (!isset($_SESSION['login'])) {
-    header("Location: /midnightplay_web/auth/auth_login.php");
+    header("Location: /auth/auth_login.php");
     exit();
 }
 
@@ -11,7 +11,7 @@ $transaction_id = $_GET['id'] ?? '';
 $user_id = $_SESSION['id_user'];
 
 if (!$transaction_id || !is_numeric($transaction_id)) {
-    header("Location: /midnightplay_web/index.php");
+    header("Location: /index.php");
     exit();
 }
 
@@ -31,7 +31,7 @@ $transaction = mysqli_fetch_assoc($result);
 
 if (!$transaction) {
     $_SESSION['error'] = "Transaction not found.";
-    header("Location: /midnightplay_web/index.php");
+    header("Location: /index.php");
     exit();
 }
 mysqli_stmt_close($stmt);

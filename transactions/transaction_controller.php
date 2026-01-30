@@ -5,7 +5,7 @@ include "../config/database.php";
 /* Proteksi login */
 if (!isset($_SESSION['login'])) {
     $_SESSION['error'] = "Please login first!";
-    header("Location: /midnightplay_web/auth/auth_login.php");
+    header("Location: /auth/auth_login.php");
     exit();
 }
 
@@ -15,7 +15,7 @@ error_log("Transaction Controller Accessed - Method: " . $_SERVER['REQUEST_METHO
 // Hanya terima POST request
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     $_SESSION['error'] = "Invalid request method!";
-    header("Location: /midnightplay_web/index.php");
+    header("Location: /index.php");
     exit();
 }
 
@@ -27,13 +27,13 @@ $agree_terms = $_POST['agree_terms'] ?? '0';
 /* Validasi data */
 if (!$id_game || !is_numeric($id_game)) {
     $_SESSION['error'] = "Invalid game ID";
-    header("Location: /midnightplay_web/transactions/transaction_buy_game.php?id=" . $id_game);
+    header("Location: /transactions/transaction_buy_game.php?id=" . $id_game);
     exit();
 }
 
 if ($agree_terms !== '1') {
     $_SESSION['error'] = "You must agree to the Terms & Conditions";
-    header("Location: /midnightplay_web/transactions/transaction_buy_game.php?id=" . $id_game);
+    header("Location: /transactions/transaction_buy_game.php?id=" . $id_game);
     exit();
 }
 
@@ -46,7 +46,7 @@ $game = mysqli_fetch_assoc($game_result);
 
 if (!$game) {
     $_SESSION['error'] = "Game not found";
-    header("Location: /midnightplay_web/transactions/transaction_buy_game.php?id=" . $id_game);
+    header("Location: /transactions/transaction_buy_game.php?id=" . $id_game);
     exit();
 }
 mysqli_stmt_close($stmt);
@@ -59,7 +59,7 @@ $check_result = mysqli_stmt_get_result($stmt);
 
 if (mysqli_num_rows($check_result) > 0) {
     $_SESSION['error'] = "You already own this game!";
-    header("Location: /midnightplay_web/library/library_user_games.php");
+    header("Location: /library/library_user_games.php");
     exit();
 }
 mysqli_stmt_close($stmt);
@@ -75,7 +75,7 @@ $user_balance = $user_data['wallet_balance'] ?? 0;
 if ($user_balance < $game['price']) {
     mysqli_stmt_close($stmt);
     $_SESSION['error'] = "Insufficient wallet balance! Please top up your wallet.";
-    header("Location: /midnightplay_web/transactions/transaction_buy_game.php?id=" . $id_game);
+    header("Location: /transactions/transaction_buy_game.php?id=" . $id_game);
     exit();
 }
 mysqli_stmt_close($stmt);
@@ -157,7 +157,7 @@ try {
     ];
 
     // Redirect ke success page
-    header("Location: /midnightplay_web/transactions/transaction_success.php");
+    header("Location: /transactions/transaction_success.php");
     exit();
 
 } catch (Exception $e) {
@@ -166,7 +166,7 @@ try {
 
     error_log("Transaction Error: " . $e->getMessage());
     $_SESSION['error'] = "Purchase failed: " . $e->getMessage();
-    header("Location: /midnightplay_web/transactions/transaction_buy_game.php?id=" . $id_game);
+    header("Location: /transactions/transaction_buy_game.php?id=" . $id_game);
     exit();
 }
 

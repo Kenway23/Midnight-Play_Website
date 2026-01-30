@@ -3,7 +3,7 @@ session_start();
 include "../config/database.php";
 
 if (!isset($_SESSION['login']) || $_SESSION['role'] != 'user') {
-    header("Location: /midnightplay_web/auth/auth_login.php");
+    header("Location: /auth/auth_login.php");
     exit();
 }
 
@@ -615,7 +615,7 @@ $filtered_count = mysqli_num_rows($filtered_query);
                     <i class="fa-solid fa-right-from-bracket"></i> Logout
                 </a>
             <?php } else { ?>
-                <a href="/midnightplay_web/auth/auth_login.php" class="btn-login">
+                <a href="/auth/auth_login.php" class="btn-login">
                     <i class="fa-solid fa-right-to-bracket"></i> Login
                 </a>
             <?php } ?>
@@ -627,7 +627,7 @@ $filtered_count = mysqli_num_rows($filtered_query);
         <!-- SIDEBAR -->
         <aside class="epic-sidebar fade-in">
             <div class="sidebar-section">
-                <a href="/midnightplay_web/index.php" class="sidebar-item">
+                <a href="/index.php" class="sidebar-item">
                     <i class="fa-solid fa-store"></i>
                     <span>Store</span>
                 </a>
@@ -637,12 +637,12 @@ $filtered_count = mysqli_num_rows($filtered_query);
                     <span>Library</span>
                 </a>
 
-                <a href="/midnightplay_web/invoices/invoice_user_list.php" class="sidebar-item">
+                <a href="/invoices/invoice_user_list.php" class="sidebar-item">
                     <i class="fa-solid fa-receipt"></i>
                     <span>Purchases</span>
                 </a>
 
-                <a href="/midnightplay_web/profile/user_profile.php" class="sidebar-item">
+                <a href="/profile/user_profile.php" class="sidebar-item">
                     <i class="fa-solid fa-user"></i>
                     <span>Profile</span>
                 </a>
@@ -763,7 +763,7 @@ $filtered_count = mysqli_num_rows($filtered_query);
 
                             <div class="library-game-image">
                                 <?php if (!empty($game['image_url'])): ?>
-                                    <img src="/midnightplay_web/assets/images/games/<?= htmlspecialchars($game['image_url']); ?>"
+                                    <img src="/assets/images/games/<?= htmlspecialchars($game['image_url']); ?>"
                                         alt="<?= htmlspecialchars($game['title']); ?>"
                                         onerror="this.src='https://via.placeholder.com/400x180/2a2f3a/66c0f4?text=Game+Image'">
                                 <?php else: ?>
@@ -815,7 +815,7 @@ $filtered_count = mysqli_num_rows($filtered_query);
                                     <a href="#" class="btn-play">
                                         <i class="fas fa-play"></i> PLAY NOW
                                     </a>
-                                    <a href="/midnightplay_web/store/store_game_detail.php?id=<?= $game['id_game']; ?>"
+                                    <a href="/store/store_game_detail.php?id=<?= $game['id_game']; ?>"
                                         class="btn-details">
                                         <i class="fas fa-info-circle"></i> DETAILS
                                     </a>
@@ -845,7 +845,7 @@ $filtered_count = mysqli_num_rows($filtered_query);
                     <p style="color: #8f98a0; max-width: 500px; margin: 0 auto 25px; line-height: 1.6;">
                         You haven't purchased any games yet. Start building your collection by exploring our amazing games!
                     </p>
-                    <a href="/midnightplay_web/index.php" class="btn-store">
+                    <a href="/index.php" class="btn-store">
                         <i class="fas fa-store"></i> Browse Store
                     </a>
                 </div>
@@ -869,7 +869,7 @@ $filtered_count = mysqli_num_rows($filtered_query);
                                 <div class="library-game-card">
                                     <div class="library-game-image">
                                         <?php if (!empty($rec['image_url'])): ?>
-                                            <img src="/midnightplay_web/assets/images/games/<?= htmlspecialchars($rec['image_url']); ?>"
+                                            <img src="/assets/images/games/<?= htmlspecialchars($rec['image_url']); ?>"
                                                 alt="<?= htmlspecialchars($rec['title']); ?>">
                                         <?php else: ?>
                                             <div
@@ -888,7 +888,7 @@ $filtered_count = mysqli_num_rows($filtered_query);
                                                 Rp <?= number_format($rec['price'], 0, ',', '.'); ?>
                                             </div>
                                         </div>
-                                        <a href="/midnightplay_web/store/store_game_detail.php?id=<?= $rec['id_game']; ?>"
+                                        <a href="/store/store_game_detail.php?id=<?= $rec['id_game']; ?>"
                                             class="btn-play" style="width: 100%; text-align: center;">
                                             <i class="fas fa-shopping-cart"></i> BUY NOW
                                         </a>
@@ -1015,7 +1015,7 @@ $filtered_count = mysqli_num_rows($filtered_query);
                 <button class="btn-secondary" onclick="closeLogoutModal()">
                     <i class="fas fa-times"></i> Cancel
                 </button>
-                <a href="/midnightplay_web/auth/auth_logout.php" class="btn-primary">
+                <a href="/auth/auth_logout.php" class="btn-primary">
                     <i class="fas fa-sign-out-alt"></i> Yes, Logout
                 </a>
             </div>

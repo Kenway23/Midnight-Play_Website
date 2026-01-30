@@ -3,7 +3,7 @@ session_start();
 include "../config/database.php";
 
 if (!isset($_SESSION['login'])) {
-    header("Location: /midnightplay_web/auth/auth_login.php");
+    header("Location: /auth/auth_login.php");
     exit();
 }
 
@@ -302,7 +302,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['change_password'])) {
                 <i class="fas fa-user-circle"></i>
                 <?= htmlspecialchars($_SESSION['username']); ?>
             </span>
-            <a href="/midnightplay_web/auth/auth_logout.php" class="btn-logout">
+            <a href="/auth/auth_logout.php" class="btn-logout">
                 <i class="fa-solid fa-right-from-bracket"></i> Logout
             </a>
         </div>
@@ -312,15 +312,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['change_password'])) {
         <!-- SIDEBAR -->
         <aside class="epic-sidebar fade-in">
             <div class="sidebar-section">
-                <a href="/midnightplay_web/index.php" class="sidebar-item">
+                <a href="/index.php" class="sidebar-item">
                     <i class="fa-solid fa-store"></i>
                     <span>Store</span>
                 </a>
-                <a href="/midnightplay_web/library/library_user_games.php" class="sidebar-item">
+                <a href="/library/library_user_games.php" class="sidebar-item">
                     <i class="fa-solid fa-gamepad"></i>
                     <span>Library</span>
                 </a>
-                <a href="/midnightplay_web/invoices/invoice_user_list.php" class="sidebar-item">
+                <a href="/invoices/invoice_user_list.php" class="sidebar-item">
                     <i class="fa-solid fa-receipt"></i>
                     <span>Purchases</span>
                 </a>
@@ -328,7 +328,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['change_password'])) {
                     <i class="fa-solid fa-user"></i>
                     <span>Profile</span>
                 </a>
-                <a href="/midnightplay_web/user/user_wallet.php" class="sidebar-item">
+                <a href="/user/user_wallet.php" class="sidebar-item">
                     <i class="fa-solid fa-wallet"></i>
                     <span>Wallet</span>
                 </a>

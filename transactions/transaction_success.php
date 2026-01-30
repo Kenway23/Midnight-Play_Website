@@ -3,7 +3,7 @@ session_start();
 include "../config/database.php";
 
 if (!isset($_SESSION['login'])) {
-    header("Location: /midnightplay_web/auth/auth_login.php");
+    header("Location:/auth/auth_login.php");
     exit();
 }
 
@@ -11,7 +11,7 @@ if (!isset($_SESSION['login'])) {
 $success_data = $_SESSION['purchase_success'] ?? null;
 
 if (!$success_data) {
-    header("Location: /midnightplay_web/index.php");
+    header("Location:/index.php");
     exit();
 }
 
@@ -46,11 +46,11 @@ unset($_SESSION['purchase_success']);
             <?= $success_data['transaction_id']; ?>
         </p>
         <div style="margin: 30px 0;">
-            <a href="/midnightplay_web/library/library_user_games.php" style="background: #66c0f4; color: white; padding: 12px 30px; 
+            <a href="/library/library_user_games.php" style="background: #66c0f4; color: white; padding: 12px 30px; 
                       border-radius: 5px; text-decoration: none; margin-right: 10px;">
                 <i class="fas fa-gamepad"></i> Go to Library
             </a>
-            <a href="/midnightplay_web/index.php" style="background: #2a2f3a; color: #c7d5e0; padding: 12px 30px; 
+            <a href="/index.php" style="background: #2a2f3a; color: #c7d5e0; padding: 12px 30px; 
                       border-radius: 5px; text-decoration: none; border: 1px solid #3d4452;">
                 <i class="fas fa-home"></i> Back to Store
             </a>

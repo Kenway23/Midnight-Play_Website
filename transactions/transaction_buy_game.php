@@ -4,7 +4,7 @@ include "../config/database.php";
 
 /* Proteksi login */
 if (!isset($_SESSION['login'])) {
-    header("Location: /midnightplay_web/auth/auth_login.php");
+    header("Location:/auth/auth_login.php");
     exit();
 }
 
@@ -13,7 +13,7 @@ $id_game = $_GET['id'] ?? '';
 
 /* Validasi input */
 if (!$id_game || !is_numeric($id_game)) {
-    header("Location: /midnightplay_web/index.php");
+    header("Location: /index.php");
     exit();
 }
 
@@ -29,7 +29,7 @@ $game_result = mysqli_stmt_get_result($stmt);
 $game = mysqli_fetch_assoc($game_result);
 
 if (!$game) {
-    header("Location: /midnightplay_web/index.php");
+    header("Location: index.php");
     exit();
 }
 mysqli_stmt_close($stmt);
@@ -46,7 +46,7 @@ $check_result = mysqli_stmt_get_result($stmt);
 
 if (mysqli_num_rows($check_result) > 0) {
     $_SESSION['error'] = "You already own this game!";
-    header("Location: /midnightplay_web/library/library_user_games.php");
+    header("Location: /library/library_user_games.php");
     exit();
 }
 mysqli_stmt_close($stmt);
@@ -61,7 +61,7 @@ $user_balance = $user_data['wallet_balance'] ?? 0;
 
 if ($user_balance < $game['price']) {
     $_SESSION['error'] = "Insufficient wallet balance! Please top up your wallet.";
-    header("Location: /midnightplay_web/store/store_game_detail.php?id=" . $id_game);
+    header("Location: /store/store_game_detail.php?id=" . $id_game);
     exit();
 }
 mysqli_stmt_close($stmt);
@@ -687,7 +687,7 @@ $balance_formatted = number_format($user_balance, 0, ',', '.');
                 </li>
             </ul>
 
-            <form id="purchaseForm" method="POST" action="/midnightplay_web/transactions/transaction_controller.php">
+            <form id="purchaseForm" method="POST" action="/transactions/transaction_controller.php">
                 <input type="hidden" name="id_game" value="<?= $id_game; ?>">
                 <input type="hidden" name="payment_method" value="midnight_wallet">
                 <input type="hidden" name="agree_terms" id="hiddenAgreeTerms" value="0">
@@ -707,7 +707,7 @@ $balance_formatted = number_format($user_balance, 0, ',', '.');
                         Confirm & Pay
                     </button>
 
-                    <a href="/midnightplay_web/store/store_game_detail.php?id=<?= $id_game; ?>" class="btn btn-cancel">
+                    <a href="/store/store_game_detail.php?id=<?= $id_game; ?>" class="btn btn-cancel">
                         <i class="fas fa-times"></i>
                         Cancel
                     </a>
@@ -816,7 +816,7 @@ $balance_formatted = number_format($user_balance, 0, ',', '.');
                 </div>
 
                 <div style="display: grid; grid-template-columns: 1fr; gap: 15px;">
-                    <a href="/midnightplay_web/library/library_user_games.php" class="btn-primary">
+                    <a href="/library/library_user_games.php" class="btn-primary">
                         <i class="fas fa-gamepad"></i> Go to Library
                     </a>
                     <button onclick="closeSuccessModal()" class="btn-secondary">

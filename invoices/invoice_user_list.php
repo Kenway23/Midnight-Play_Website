@@ -3,7 +3,7 @@ session_start();
 include "../config/database.php";
 
 if (!isset($_SESSION['login'])) {
-    header("Location: /midnightplay_web/auth/auth_login.php");
+    header("Location: /auth/auth_login.php");
     exit();
 }
 
@@ -691,7 +691,7 @@ $transactions = mysqli_query($conn, "
                     <i class="fa-solid fa-right-from-bracket"></i> Logout
                 </a>
             <?php } else { ?>
-                <a href="/midnightplay_web/auth/auth_login.php" class="btn-login">
+                <a href="/auth/auth_login.php" class="btn-login">
                     <i class="fa-solid fa-right-to-bracket"></i> Login
                 </a>
             <?php } ?>
@@ -703,12 +703,12 @@ $transactions = mysqli_query($conn, "
         <!-- SIDEBAR -->
         <aside class="epic-sidebar fade-in">
             <div class="sidebar-section">
-                <a href="/midnightplay_web/index.php" class="sidebar-item">
+                <a href="/index.php" class="sidebar-item">
                     <i class="fa-solid fa-store"></i>
                     <span>Store</span>
                 </a>
 
-                <a href="/midnightplay_web/library/library_user_games.php" class="sidebar-item">
+                <a href="/library/library_user_games.php" class="sidebar-item">
                     <i class="fa-solid fa-gamepad"></i>
                     <span>Library</span>
                 </a>
@@ -718,7 +718,7 @@ $transactions = mysqli_query($conn, "
                     <span>Purchases</span>
                 </a>
 
-                <a href="/midnightplay_web/profile/user_profile.php" class="sidebar-item">
+                <a href="/profile/user_profile.php" class="sidebar-item">
                     <i class="fa-solid fa-user"></i>
                     <span>Profile</span>
                 </a>
@@ -940,7 +940,7 @@ $transactions = mysqli_query($conn, "
                         You haven't made any purchases yet. Start building your game collection by exploring our amazing
                         games!
                     </p>
-                    <a href="/midnightplay_web/index.php" class="btn-explore">
+                    <a href="/index.php" class="btn-explore">
                         <i class="fas fa-store"></i> Browse Store
                     </a>
                 </div>
@@ -1336,7 +1336,7 @@ $transactions = mysqli_query($conn, "
                 <button class="btn-secondary" onclick="closeLogoutModal()">
                     <i class="fas fa-times"></i> Cancel
                 </button>
-                <a href="/midnightplay_web/auth/auth_logout.php" class="btn-primary">
+                <a href="/auth/auth_logout.php" class="btn-primary">
                     <i class="fas fa-sign-out-alt"></i> Yes, Logout
                 </a>
             </div>
