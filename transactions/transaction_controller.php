@@ -52,7 +52,7 @@ if (!$game) {
 mysqli_stmt_close($stmt);
 
 /* Cek apakah sudah memiliki game ini */
-$stmt = mysqli_prepare($conn, "SELECT * FROM library WHERE id_user = ? AND id_game = ?");
+$stmt = mysqli_prepare($conn, "SELECT * FROM `library` WHERE id_user = ? AND id_game = ?");
 mysqli_stmt_bind_param($stmt, "ii", $id_user, $id_game);
 mysqli_stmt_execute($stmt);
 $check_result = mysqli_stmt_get_result($stmt);
@@ -132,7 +132,7 @@ try {
     // Field: id_library, id_user, id_game, purchased_at
     $stmt = mysqli_prepare(
         $conn,
-        "INSERT INTO library (id_user, id_game, purchased_at) 
+        "INSERT INTO `library` (id_user, id_game, purchased_at) 
          VALUES (?, ?, NOW())"
     );
     mysqli_stmt_bind_param($stmt, "ii", $id_user, $id_game);
